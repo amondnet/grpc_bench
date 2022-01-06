@@ -33,12 +33,12 @@ Future<void> main(List<String> args) async {
 
   final server = Server([GreeterService()]);
 
-  //final cups = int.tryParse(env["GRPC_SERVER_CPUS"] ?? '1') ?? 1;
+  final cups = int.tryParse(env["GRPC_SERVER_CPUS"] ?? '1') ?? 1;
 
-  //for (var serve = 0; serve < cups; serve++) {
-  //  await server.serve(address: '0.0.0.0', port: 50051, shared: true);
-  //}
+  for (var serve = 0; serve < cups; serve++) {
+    await server.serve(address: '0.0.0.0', port: 50051, shared: true);
+  }
 
-  await server.serve(address: '0.0.0.0', port: 50051, shared: true);
+  // await server.serve(address: '0.0.0.0', port: 50051, shared: true);
   print('Server listening on port ${server.port}...');
 }

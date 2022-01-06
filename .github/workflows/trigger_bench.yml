@@ -38,15 +38,20 @@ on:
       description: "Maximum number of cpus used by the client."
       required: false
       default: '1'
+    benchmarksToRun:
+      description: "You need them to run the benchmarks"
+      required: false
+      # default: ''
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Build Docker images for the benchmarks
-        run: ./build.sh dart_grpc_bench dart_grpc_aot_bench
+        run: ./build.sh dart_grpc_bench {{ github.event.inputs.benchmarksToRun }}
       - name: Run the benchmarks
-        run: ./bench.sh dart_grpc_bench dart_grpc_aot_bench
+        run: ./bench.sh dart_grpc_bench {{ github.event.inputs.benchmarksToRun }}
         env:
           GRPC_BENCHMARK_DURATION: {{github.event.inputs.GRPC_BENCHMARK_DURATION}}
           GRPC_BENCHMARK_WARMUP: {{github.event.inputs.GRPC_BENCHMARK_WARMUP}}

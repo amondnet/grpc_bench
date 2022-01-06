@@ -2,46 +2,47 @@ name: Run benchmarks
 
 on:
   workflow_dispatch:
-    GRPC_BENCHMARK_DURATION:
-      description: 'Duration of the benchmark.'
-      required: false
-      default: '20s'
-    GRPC_BENCHMARK_WARMUP:
-      description: "Duration of the warmup. Stats won't be collected."
-      required: false
-      default: '5s'
-    GRPC_REQUEST_PAYLOAD:
-      description: 'File (from [payload/](payload/)) containing the data to be sent in the client request.'
-      required: false
-      default: '100B'
-    GRPC_SERVER_CPUS:
-      description: 'Maximum number of cpus used by the server.'
-      required: false
-      default: '1'
-    GRPC_SERVER_RAM:
-      description: 'Maximum memory used by the server.'
-      required: false
-      default: '512m'
-    GRPC_CLIENT_CONNECTIONS:
-      description: 'Number of connections to use.'
-      required: false
-      default: '50'
-    GRPC_CLIENT_CONCURRENCY:
-      description: "Number of requests to run concurrently. It can't be smaller than the number of connections."
-      required: false
-      default: '1000'
-    GRPC_CLIENT_QPS:
-      description: "Rate limit, in queries per second (QPS)."
-      required: false
-      default: '0'
-    GRPC_CLIENT_CPUS:
-      description: "Maximum number of cpus used by the client."
-      required: false
-      default: '1'
-    benchmarksToRun:
-      description: "You need them to run the benchmarks"
-      required: false
-      # default: ''
+    inputs:
+      GRPC_BENCHMARK_DURATION:
+        description: 'Duration of the benchmark.'
+        required: false
+        default: '20s'
+      GRPC_BENCHMARK_WARMUP:
+        description: "Duration of the warmup. Stats won't be collected."
+        required: false
+        default: '5s'
+      GRPC_REQUEST_PAYLOAD:
+        description: 'File (from [payload/](payload/)) containing the data to be sent in the client request.'
+        required: false
+        default: '100B'
+      GRPC_SERVER_CPUS:
+        description: 'Maximum number of cpus used by the server.'
+        required: false
+        default: '1'
+      GRPC_SERVER_RAM:
+        description: 'Maximum memory used by the server.'
+        required: false
+        default: '512m'
+      GRPC_CLIENT_CONNECTIONS:
+        description: 'Number of connections to use.'
+        required: false
+        default: '50'
+      GRPC_CLIENT_CONCURRENCY:
+        description: "Number of requests to run concurrently. It can't be smaller than the number of connections."
+        required: false
+        default: '1000'
+      GRPC_CLIENT_QPS:
+        description: "Rate limit, in queries per second (QPS)."
+        required: false
+        default: '0'
+      GRPC_CLIENT_CPUS:
+        description: "Maximum number of cpus used by the client."
+        required: false
+        default: '1'
+      benchmarksToRun:
+        description: "You need them to run the benchmarks"
+        required: false
+        # default: ''
 
 jobs:
   build:

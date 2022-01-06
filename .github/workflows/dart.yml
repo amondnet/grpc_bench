@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+    
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Docker images for the benchmarks
+        run: ./build.sh dart_grpc_bench dart_grpc_aot_bench
+      - name: Run the benchmarks
+        run: ./bench.sh dart_grpc_bench dart_grpc_aot_bench
+        env:
+          GRPC_BENCHMARK_DURATION: "30s"

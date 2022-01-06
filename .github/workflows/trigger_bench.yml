@@ -50,9 +50,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build Docker images for the benchmarks
-        run: ./build.sh dart_grpc_bench ${{ github.event.inputs.benchmarksToRun }}
+        run: ./build.sh ${{ github.event.inputs.benchmarksToRun }}
       - name: Run the benchmarks
-        run: ./bench.sh dart_grpc_bench ${{ github.event.inputs.benchmarksToRun }}
+        run: ./bench.sh ${{ github.event.inputs.benchmarksToRun }}
         env:
           GRPC_BENCHMARK_DURATION: ${{ github.event.inputs.GRPC_BENCHMARK_DURATION }}
           GRPC_BENCHMARK_WARMUP: ${{ github.event.inputs.GRPC_BENCHMARK_WARMUP }}

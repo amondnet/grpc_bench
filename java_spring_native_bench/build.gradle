@@ -56,3 +56,8 @@ bootBuildImage {
             "BP_NATIVE_IMAGE" : "true"
     ]
 }
+springAot {
+    removeSpelSupport = true
+    removeXmlSupport = true
+
+}

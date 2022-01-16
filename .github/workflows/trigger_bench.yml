@@ -54,7 +54,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.inputs.ref }}
+          ref: ${{ github.event.inputs.branch }}
       - name: Build Docker images for the benchmarks
         run: ./build.sh ${{ github.event.inputs.benchmarksToRun }}
       - name: Run the benchmarks

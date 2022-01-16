@@ -11,10 +11,6 @@ on:
         description: "Duration of the warmup. Stats won't be collected."
         required: false
         default: '5s'
-      GRPC_REQUEST_PAYLOAD:
-        description: 'File (from [payload/](payload/)) containing the data to be sent in the client request.'
-        required: false
-        default: '100B'
       GRPC_SERVER_CPUS:
         description: 'Maximum number of cpus used by the server.'
         required: false
@@ -39,6 +35,10 @@ on:
         description: "Maximum number of cpus used by the client."
         required: false
         default: '1'
+      GRPC_REQUEST_SCENARIO:
+        description: "Scenario (from [scenarios/](scenarios/)) containing the protobuf and the data to be sent in the client request."
+        required: true
+        default: 'complex_proto'
       benchmarksToRun:
         description: "You need them to run the benchmarks"
         required: false

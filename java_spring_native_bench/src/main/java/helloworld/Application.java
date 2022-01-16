@@ -19,7 +19,7 @@ public class Application {
         /* The port on which the server should run */
         int port = 50051;
         server = ServerBuilder.forPort(port)
-            .addService(ProtoReflectionService.newInstance())
+            //.addService(ProtoReflectionService.newInstance())
             .addService(new GreetingImpl()).build().start();
         logger.info("Server started, listening on " + port);
         Runtime.getRuntime().addShutdownHook(new Thread() {

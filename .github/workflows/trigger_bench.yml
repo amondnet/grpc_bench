@@ -3,6 +3,10 @@ name: Run benchmarks
 on:
   workflow_dispatch:
     inputs:
+      branch:
+        description: 'branch'
+        required: true
+        default: 'master'
       GRPC_BENCHMARK_DURATION:
         description: 'Duration of the benchmark.'
         required: false
@@ -49,6 +53,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.inputs.ref }}
       - name: Build Docker images for the benchmarks
         run: ./build.sh ${{ github.event.inputs.benchmarksToRun }}
       - name: Run the benchmarks

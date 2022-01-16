@@ -35,10 +35,10 @@ on:
         description: "Number of requests to run concurrently. It can't be smaller than the number of connections."
         required: false
         default: '1000'
-      GRPC_CLIENT_QPS:
-        description: "Rate limit, in queries per second (QPS)."
-        required: false
-        default: '0'
+      #GRPC_CLIENT_QPS:
+      #  description: "Rate limit, in queries per second (QPS)."
+      #  required: false
+      #  default: '0'
       GRPC_CLIENT_CPUS:
         description: "Maximum number of cpus used by the client."
         required: false

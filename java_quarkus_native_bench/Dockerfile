@@ -1,6 +1,9 @@
-FROM adoptopenjdk/openjdk11:ubi
+#FROM adoptopenjdk/openjdk11:ubi
+FROM ghcr.io/graalvm/graalvm-ce:ol8-java11-21.1.0 as rel
 
 WORKDIR /app
+
+RUN gu install native-image
 
 COPY java_quarkus_bench /app
 COPY proto /app/src/main/proto

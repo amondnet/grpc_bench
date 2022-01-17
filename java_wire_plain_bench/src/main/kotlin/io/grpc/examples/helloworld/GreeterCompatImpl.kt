@@ -1,4 +1,4 @@
-package helloworld
+package io.grpc.examples.helloworld
 
 
 import io.grpc.stub.StreamObserver

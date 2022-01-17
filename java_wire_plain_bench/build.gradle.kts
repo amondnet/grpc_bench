@@ -8,7 +8,7 @@ repositories {
   mavenCentral()
 }
 application {
-  mainClassName = "com.squareup.wire.whiteboard.MiskGrpcServerKt"
+  mainClassName = "helloworld.ServerKt"
 }
 
 wire {

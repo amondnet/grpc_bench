@@ -8,7 +8,7 @@ repositories {
   mavenCentral()
 }
 application {
-  mainClassName = "io.grpc.examples.helloworld.MiskGrpcServerKt"
+  mainClassName = "helloworld.MiskGrpcServerKt"
 }
 
 wire {

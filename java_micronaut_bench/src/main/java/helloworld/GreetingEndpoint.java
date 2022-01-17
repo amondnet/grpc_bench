@@ -1,9 +1,9 @@
 package helloworld;
 
 // tag::imports[]
-import io.grpc.examples.helloworld.GreeterGrpc;
-import io.grpc.examples.helloworld.HelloReply;
-import io.grpc.examples.helloworld.HelloRequest;
+import helloworld.GreeterGrpc;
+import helloworld.HelloReply;
+import helloworld.HelloRequest;
 import io.grpc.stub.StreamObserver;
 import javax.inject.Singleton;
 // end::imports[]

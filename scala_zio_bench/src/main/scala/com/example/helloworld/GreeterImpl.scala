@@ -1,8 +1,8 @@
 package io.grpc.examples.helloworld
 
 import io.grpc.Status
-import io.grpc.examples.helloworld.helloworld.ZioHelloworld.ZGreeter
-import io.grpc.examples.helloworld.helloworld.{HelloReply, HelloRequest}
+import helloworld.helloworld.ZioHelloworld.ZGreeter
+import helloworld.helloworld.{HelloReply, HelloRequest}
 import zio.{ZEnv, ZIO}
 
 

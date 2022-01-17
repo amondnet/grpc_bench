@@ -1,8 +1,8 @@
 package com.example;
 
-import io.grpc.examples.helloworld.HelloReply;
-import io.grpc.examples.helloworld.HelloRequest;
-import io.grpc.examples.helloworld.MutinyGreeterGrpc;
+import helloworld.HelloReply;
+import helloworld.HelloRequest;
+import helloworld.MutinyGreeterGrpc;
 import io.quarkus.grpc.GrpcService;
 import io.smallrye.mutiny.Uni;
 

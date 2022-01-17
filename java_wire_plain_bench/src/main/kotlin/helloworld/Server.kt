@@ -1,11 +1,10 @@
-package io.grpc.examples.helloworld
+package helloworld
 
 import io.grpc.ServerBuilder
-import io.grpc.examples.helloworld.GreeterCompatImpl
 
 fun main() {
   val server = ServerBuilder.forPort(50051)
-    .addService(GreeterCompatImpl())
+    .addService(GreeterImpl())
     .build()
 
   server.start()

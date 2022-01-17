@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY java_wire_plain_bench /app
 COPY proto /app/src/main/proto
-ADD helloworld.proto /app/src/main/proto
+ADD /app/helloworld.proto /app/src/main/proto
 
 RUN /app/gradlw build
 
